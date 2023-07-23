@@ -10,7 +10,7 @@ const corsConfig = {
     origin: "*",
     credential: true,
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"]
-  }
+}
 app.use(cors(corsConfig));
 // app.use(cors());
 app.use(express.json());
@@ -82,13 +82,41 @@ async function run() {
             const result = await cursor.toArray();
             res.send(result);
         })
+        
+        app.post("/review", async (req, res) => {
+            const newReview = req.body;
+            // console.log(newReview)
+            const result = await Reviews.insertOne(newReview);
+            res.send(result)
+        })
 
         // Admission 
         app.post("/admission", async (req, res) => {
             const candidateInfo = req.body;
-            console.log(candidateInfo)
+            // console.log(candidateInfo)
             const result = await CHAdmissionList.insertOne(candidateInfo);
             res.send(result)
+        })
+
+        // college info for an user 
+        app.get("/my-college", async (req, res) => {
+            const email = req.query?.email;
+
+            const cursor = await CHAdmissionList.findOne({ email: email });
+            
+            
+
+            if (cursor?.collegeId) {
+                const collegeID = cursor.collegeId;
+                const college = await AllColleges.findOne({ _id: new ObjectId(collegeID)});
+                console.log(college)
+                res.send(college);
+                return;
+            }
+
+            // res.status(404).send({message: "You have not get admit yet!"});
+            res.send({});
+
         })
 
 
