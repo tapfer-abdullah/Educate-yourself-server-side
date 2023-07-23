@@ -82,7 +82,7 @@ async function run() {
             const result = await cursor.toArray();
             res.send(result);
         })
-        
+
         app.post("/review", async (req, res) => {
             const newReview = req.body;
             // console.log(newReview)
@@ -94,22 +94,26 @@ async function run() {
         app.post("/admission", async (req, res) => {
             const candidateInfo = req.body;
             // console.log(candidateInfo)
-            const result = await CHAdmissionList.insertOne(candidateInfo);
+
+            const college = await AllColleges.findOne({ _id: new ObjectId(candidateInfo?.collegeId) });
+            // console.log(college.college_name)
+
+            const newCandidateInfo = { ...candidateInfo, college_name: college.college_name }
+            const result = await CHAdmissionList.insertOne(newCandidateInfo);
+
+            // const result = await CHAdmissionList.insertOne(candidateInfo);
             res.send(result)
         })
 
-        // college info for an user 
+        // college info for an user for admission 
         app.get("/my-college", async (req, res) => {
             const email = req.query?.email;
-
             const cursor = await CHAdmissionList.findOne({ email: email });
-            
-            
 
             if (cursor?.collegeId) {
                 const collegeID = cursor.collegeId;
-                const college = await AllColleges.findOne({ _id: new ObjectId(collegeID)});
-                console.log(college)
+                const college = await AllColleges.findOne({ _id: new ObjectId(collegeID) });
+                // console.log(college)
                 res.send(college);
                 return;
             }
@@ -119,7 +123,32 @@ async function run() {
 
         })
 
+        app.get("/myProfile", async (req, res) => {
+            const email = req.query?.email;
+            const data = await CHAdmissionList.findOne({ email: email });
+            res.send(data);
+        })
 
+        app.patch("/myProfile/:id", async (req, res) => {
+            const id = req.params?.id;
+            const newData = req.body;
+            // const data = await CHAdmissionList.findOne({ email: email }); 
+            // res.send(data);
+
+            const filter = { _id: new ObjectId(id) };
+            // this option instructs the method to create a document if no documents match the filter
+            const options = { upsert: true };
+            // create a document that sets the plot of the movie
+            const updateDoc = {
+                $set: {
+                    firstName: newData.firstName, LastName: newData.LastName, PhoneNumber: newData.PhoneNumber, email: newData.email, address: newData.address, collegeId: newData.collegeId, college_name: newData.college_name
+                },
+            };
+            const result = await CHAdmissionList.updateOne(filter, updateDoc, options);
+            res.send(result);
+
+            console.log(result)
+        })
 
         // Send a ping to confirm a successful connection
         await client.db("admin").command({ ping: 1 });
