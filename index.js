@@ -5,7 +5,17 @@ const port = 5000
 const cors = require('cors');
 require('dotenv').config();
 
-app.use(cors())
+// middle wares 
+const corsConfig = {
+    origin: "*",
+    credential: true,
+    methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"]
+  }
+app.use(cors(corsConfig));
+// app.use(cors());
+app.use(express.json());
+
+
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
@@ -33,6 +43,7 @@ async function run() {
         const CollegeHub = client.db("CollegeHub");
         const AllColleges = CollegeHub.collection("AllColleges");
         const Reviews = CollegeHub.collection("Reviews");
+        const CHAdmissionList = CollegeHub.collection("CHAdmissionList");
 
 
         // app.get("/colleges", async (req, res) => {
@@ -60,7 +71,7 @@ async function run() {
 
         app.get("/colleges/:id", async (req, res) => {
             const id = req.params;
-            const college = await AllColleges.findOne({_id: new ObjectId(id)});
+            const college = await AllColleges.findOne({ _id: new ObjectId(id) });
             res.send(college);
         })
 
@@ -70,6 +81,14 @@ async function run() {
             const cursor = Reviews.find();
             const result = await cursor.toArray();
             res.send(result);
+        })
+
+        // Admission 
+        app.post("/admission", async (req, res) => {
+            const candidateInfo = req.body;
+            console.log(candidateInfo)
+            const result = await CHAdmissionList.insertOne(candidateInfo);
+            res.send(result)
         })
 
 
