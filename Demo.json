@@ -1,0 +1,74 @@
+[
+    {
+        "total_research": 90,
+        "rating" : 4.7,
+        "college_image": "https://i.ibb.co/qn5ZYm8/image.png",
+        "college_name": "University of ABC",
+        "admission_dates": "August 15 - September 30",
+        "events": "Orientation Day, Annual Fest, Career Fair",
+        "research_history": "Established in 1950, the university has a rich research legacy.",
+        "sports": "Football, Basketball, Swimming",
+        "sports_details": "The college's sport facilities offer diverse amenities for students to explore their athletic potential. The complex includes courts for basketball, volleyball, badminton, a well-equipped gym, outdoor track, and an Olympic-sized swimming pool. Regular tournaments promote healthy competition, fostering a well-rounded student body.",
+        "admission_process": "ABC is known for its highly competitive admissions process. Prospective undergraduate students need to submit their application, including academic transcripts, test scores (SAT or ACT), letters of recommendation, and essays. MIT also encourages students to showcase their achievements, talents, and passion for their chosen field through their application. The admissions committee reviews each application holistically, considering not only academic achievements but also extracurricular activities and personal qualities."
+    },
+    {
+        "total_research": 125,
+        "rating" : 4.3,
+        "college_image": "https://i.ibb.co/Fq1bhFr/image.png",
+        "college_name": "XYZ College",
+        "admission_dates": "July 1 - August 31",
+        "events": "Freshers Party, Tech Symposium, Cultural Night",
+        "research_history": "The college focuses on innovative research in various fields.",
+        "sports": "Cricket, Tennis, Badminton",
+        "sports_details": "The college's sport facilities offer diverse amenities for students to explore their athletic potential. The complex includes courts for basketball, volleyball, badminton, a well-equipped gym, outdoor track, and an Olympic-sized swimming pool. Regular tournaments promote healthy competition, fostering a well-rounded student body.",
+        "admission_process": "For undergraduate programs, XYZ College follows a unique tutorial-based teaching method. Applicants need to apply through the Universities and Colleges Admissions Service (UCAS). The admission requirements may vary depending on the chosen course, but typically include strong academic performance, letters of recommendation, personal statement, and sometimes admissions tests or interviews."
+    },
+    {
+        "total_research": 150,
+        "rating" : 4.5,
+        "college_image": "https://i.ibb.co/34KMXfv/image.png",
+        "college_name": "Institute of PQR",
+        "admission_dates": "October 1 - November 15",
+        "events": "Academic Conference, Sports Carnival, Alumni Meet",
+        "research_history": "The institute is renowned for groundbreaking research contributions.",
+        "sports": "Volleyball, Athletics, Table Tennis",
+        "sports_details": "The college's sport facilities offer diverse amenities for students to explore their athletic potential. The complex includes courts for basketball, volleyball, badminton, a well-equipped gym, outdoor track, and an Olympic-sized swimming pool. Regular tournaments promote healthy competition, fostering a well-rounded student body.",
+        "admission_process": "The Institute of PQR requires applicants to take the National Center Test for University Admissions or other specific examinations for certain programs. Prospective students must also submit their high school academic records and may be required to take interviews or additional tests depending on the faculty or department they are applying to."
+    },
+    {
+        "total_research": 26,
+        "rating" : 4,
+        "college_image": "https://i.ibb.co/7SBxdWB/image.png",
+        "college_name": "ETH Zurich",
+        "admission_dates": "April 15 - June 30",
+        "events": "Art Exhibition, Literary Fest, Dance Showcase",
+        "research_history": "This college has been a pioneer in artistic research and expression.",
+        "sports": "Chess, Gymnastics, Karate",
+        "sports_details": "The college's sport facilities offer diverse amenities for students to explore their athletic potential. The complex includes courts for basketball, volleyball, badminton, a well-equipped gym, outdoor track, and an Olympic-sized swimming pool. Regular tournaments promote healthy competition, fostering a well-rounded student body.",
+        "admission_process": "ETH Zurich, a leading technical university, typically requires applicants to hold a high school diploma or equivalent with a strong background in Mathematics and Science. For undergraduate programs, international students often need to take the ETH Entrance Examination, which includes Mathematics, Physics, and an English language test."
+    },
+    {
+        "total_research": 50,
+        "rating" : 4.5,
+        "college_image": "https://i.ibb.co/JrjzHZN/image.png",
+        "college_name": "UVW Business College",
+        "admission_dates": "December 1 - January 31",
+        "events": "Business Conclave, Entrepreneurship Summit, Marketing Workshop",
+        "research_history": "The business school has a strong focus on industry-relevant research.",
+        "sports": "Golf, Squash, Cricket",
+        "sports_details": "The college's sport facilities offer diverse amenities for students to explore their athletic potential. The complex includes courts for basketball, volleyball, badminton, a well-equipped gym, outdoor track, and an Olympic-sized swimming pool. Regular tournaments promote healthy competition, fostering a well-rounded student body.",
+        "admission_process": "UVW Business College assesses undergraduate applications based on academic performance, with minimum entry requirements varying by program. Some courses may also require additional admission criteria, such as interviews, portfolios for creative programs, or written submissions."
+    },
+    {
+        "total_research": 70,
+        "rating" : 4.9,
+        "college_image": "https://i.ibb.co/g6z3QwZ/image.png",
+        "college_name": "EFG College of Techonology",
+        "admission_dates": "May 15 - July 31",
+        "events": "Music Festival, Masterclasses, Chamber Ensemble",
+        "research_history": "The college is a hub for musical research and artistic expression.",
+        "sports": "Golf, Football, Cricket",
+        "sports_details": "The college's sport facilities offer diverse amenities for students to explore their athletic potential. The complex includes courts for basketball, volleyball, badminton, a well-equipped gym, outdoor track, and an Olympic-sized swimming pool. Regular tournaments promote healthy competition, fostering a well-rounded student body.",
+        "admission_process": "EFG College of Techonology admit students to undergraduate engineering programs through the Joint Entrance Examination (JEE) Advanced, which is considered one of the most challenging engineering entrance exams in the world. Students who clear the JEE Advanced exam are eligible for admission to various IITs based on their ranks and preferences."
+    }
+]
